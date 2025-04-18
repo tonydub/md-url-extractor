@@ -3,16 +3,48 @@ name = "md-url-extractor"
 version = "0.1.0"
 edition = "2024"
 authors = ["Tony Dubreil <tonydub@users.noreply.github.com>"]
-description = "A tool to extract URLs from Markdown files"
+description = "A CLI tool for extracting, cleaning, and exporting URLs from Markdown files."
+keywords = ["markdown", "url", "extractor", "csv", "cli"]
+categories = ["command-line-utilities"]
 readme = "README.md"
 license = "MIT"
-repository = "https://github.com/yourusername/md-url-extractor"
+repository = "https://github.com/tonydub/md-url-extractor"
 
 [dependencies]
-clap = { version = "4.4", features = ["derive"] }
+# Command-line argument parsing with subcommands, flags, and options
+clap = { version = "4.4", features = ["derive", "env"] }
+
+# Markdown parser for extracting link elements from markdown files
 pulldown-cmark = "0.9"
+
+# Parallel processing library for improved performance when scanning multiple files
 rayon = "1.8"
+
+# Directory traversal utility for recursively finding markdown files
 walkdir = "2.4"
+
+# Progress bars and indicators for the command-line interface
 indicatif = "0.17"
+
+# URL parsing, validation, and manipulation (removing tracking params, etc.)
 url = "2.4"
+
+# CSV file creation and formatting for the CSV output option
 csv = "1.3"
+
+[lints.clippy]
+single_match = "warn"
+single_match_else = "warn"
+needless_match = "warn"
+needless_late_init = "warn"
+redundant_pattern_matching = "warn"
+redundant_pattern = "warn"
+redundant_guards = "warn"
+collapsible_match = "warn"
+match_single_binding = "warn"
+match_same_arms = "warn"
+match_ref_pats = "warn"
+match_bool = "warn"
+needless_bool = "deny"
+unwrap_used = "warn"
+expect_used = "warn"
