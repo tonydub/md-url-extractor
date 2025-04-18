@@ -1,0 +1,18 @@
+[package]
+name = "md-url-extractor"
+version = "0.1.0"
+edition = "2024"
+authors = ["Tony Dubreil <tonydub@users.noreply.github.com>"]
+description = "A tool to extract URLs from Markdown files"
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/yourusername/md-url-extractor"
+
+[dependencies]
+clap = { version = "4.4", features = ["derive"] }
+pulldown-cmark = "0.9"
+rayon = "1.8"
+walkdir = "2.4"
+indicatif = "0.17"
+url = "2.4"
+csv = "1.3"
