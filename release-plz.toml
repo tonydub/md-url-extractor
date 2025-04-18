@@ -1,0 +1,5 @@
+[workspace]
+# Whether to update changelog
+changelog_update = true
+# The cargo registry to use
+registry = "crates-io"
